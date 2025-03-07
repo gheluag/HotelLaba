@@ -1,0 +1,85 @@
+﻿<Page x:Class="HotelApp.Pages.AdminPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HotelApp.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="600"
+      Title="AdminPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="Pageheader" 
+    Text="Администраторы" 
+    Style="{StaticResource HeadersPages}"/>
+
+        <Grid Grid.Row="1" Background="#A286C0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+
+            <TextBlock Text="ФИО Администратора"
+                       TextWrapping="Wrap"
+                       Style="{StaticResource TablesHeaders}"/>
+
+            <TextBlock Text="Номер регистрационного журнала"
+                       Grid.Column="1"
+           Style="{StaticResource TablesHeaders}"/>
+        </Grid>
+
+        <ListBox x:Name="adminLB"
+                 Grid.Row="2">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="350"/>
+                            <ColumnDefinition Width="300"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock x:Name="nameadmin" 
+                                   Grid.Column="0"
+                                   Text="{Binding Name}"
+                                   Style="{StaticResource TablesRows}"/>
+
+                        <TextBlock x:Name="journalnum" 
+           Grid.Column="1"
+           Text="{Binding IdJournal}"
+           Style="{StaticResource TablesRows}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <StackPanel 
+            HorizontalAlignment="Center"
+            Grid.Row="4"
+            Orientation="Horizontal">
+
+            <Button x:Name="addRoomer"
+                    Content="Добавить"
+                    Style="{StaticResource Buttonsssss}"
+                    Width="100"
+                    Height="40"
+                    Margin="10" Click="addRoomer_Click"/>
+
+            <Button x:Name="delRoomer"
+Content="Уволить"
+Style="{StaticResource Buttonsssss}"
+Width="100"
+Height="40"
+Margin="10" Click="delRoomer_Click"/>
+        </StackPanel>
+
+
+    </Grid>
+</Page>

@@ -1,0 +1,135 @@
+﻿<Page x:Class="HotelApp.Pages.RegJournalPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HotelApp.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="600"
+      Title="RegJournalPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="Pageheader" 
+           Text="Регистрационный журнал" 
+           Style="{StaticResource HeadersPages}"/>
+
+        
+
+        <Grid Grid.Row="1" Background="#A286C0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="57"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+
+            <TextBlock Text="Номер журнала"
+                       TextWrapping="Wrap"
+                       Style="{StaticResource TablesHeaders}"/>
+
+            <TextBlock Text="Время регистрации"
+                       TextWrapping="Wrap"
+                       Grid.Column="1"
+           Style="{StaticResource TablesHeaders}"/>
+
+            <TextBlock Text="Имя постояльца"
+                       TextWrapping="Wrap"
+            Grid.Column="2"
+Style="{StaticResource TablesHeaders}"/>
+            <TextBlock Text="фамилия постояльца"
+                       TextWrapping="Wrap"
+            Grid.Column="3"
+Style="{StaticResource TablesHeaders}"/>
+            <TextBlock Text="№ комнаты"
+            Grid.Column="4"
+Style="{StaticResource TablesHeaders}"/>
+
+            <TextBlock Text="Дата въезда"
+            Grid.Column="5"
+Style="{StaticResource TablesHeaders}"/>
+            <TextBlock Text="Дата выезда"
+            Grid.Column="6"
+Style="{StaticResource TablesHeaders}"/>
+        </Grid>
+
+        <ListBox x:Name="journalLB"
+                 Grid.Row="2">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="110"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="110"/>
+                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock x:Name="numjour" 
+           Grid.Column="0"
+           Text="{Binding Id}"
+           Style="{StaticResource TablesRows}"/>
+
+                        <TextBlock x:Name="timereg" 
+           Grid.Column="1"
+           Text="{Binding RegTime}"
+           Style="{StaticResource TablesRows}"/>
+
+                        <TextBlock x:Name="firstname" 
+           Grid.Column="2"
+           Text="{Binding FirstName}"
+           Style="{StaticResource TablesRows}"/>
+
+                        <TextBlock x:Name="lastname" 
+           Grid.Column="3"
+           Text="{Binding LastName}"
+           Style="{StaticResource TablesRows}"/>
+
+                        <TextBlock x:Name="roomnum" 
+           Grid.Column="4"
+           Text="{Binding RoomNum}"
+           Style="{StaticResource TablesRows}"/>
+
+                        <TextBlock x:Name="dateentry" 
+           Grid.Column="5"
+           Text="{Binding Entry}"
+           Style="{StaticResource TablesRows}"/>
+
+                        <TextBlock x:Name="datedepart" 
+           Grid.Column="6"
+           Text="{Binding Departure}"
+           Style="{StaticResource TablesRows}"/>
+
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <StackPanel 
+            HorizontalAlignment="Center"
+            Grid.Row="4"
+            Orientation="Horizontal">
+
+            <Button x:Name="addRoomer"
+                    Content="Добавить"
+                    Style="{StaticResource Buttonsssss}"
+                    Width="100"
+                    Height="40"
+                    Margin="10" Click="addRoomer_Click"/>
+
+        </StackPanel>
+    </Grid>
+</Page>
