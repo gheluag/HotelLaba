@@ -1,0 +1,59 @@
+﻿<Window x:Class="HotelApp_net8.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HotelApp_net8"
+        mc:Ignorable="d"
+        Title="Hotel" Height="600" Width="900"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Icon="Resources/hotelIcon.png">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Background="#CA98E0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="300"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="1">
+                <Button x:Name="rooms_btn" 
+Content="Номера"
+                FontFamily="Franklin Gothic Book"
+Style="{StaticResource Buttonsssss}"
+Margin="10"
+                Height="30" Click="rooms_btn_Click"/>
+
+                <Button x:Name="roomers_btn" 
+        Content="Постояльцы"
+                        FontFamily="Franklin Gothic Book"
+        Style="{StaticResource Buttonsssss}"
+        Margin="10"
+                        Height="30" Click="roomers_btn_Click"/>
+
+                <Button x:Name="admins_btn" 
+Content="Администраторы"
+                FontFamily="Franklin Gothic Book"
+Style="{StaticResource Buttonsssss}"
+Margin="10"
+                Height="30" Click="admins_btn_Click"/>
+
+                <Button x:Name="journal_btn" 
+Content="Регистрационный журнал"
+                FontFamily="Franklin Gothic Book"
+Style="{StaticResource Buttonsssss}"
+Margin="10"
+                Height="30" Click="journal_btn_Click"/>
+            </StackPanel>
+        </Grid>
+
+        <Frame x:Name="mainframe" Grid.Column="1"
+               NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
